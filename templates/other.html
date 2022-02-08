@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!-- www.phpied.com/conditional-comments-block-downloads/ -->
+        <!-- Always force latest IE rendering engine
+             (even in intranet) & Chrome Frame
+             Remove this if you use the .htaccess -->
+        <!--  Mobile Viewport Fix
+              j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+              device-width: Occupy full width of the screen in its current orientation
+              initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+              user-scalable = yes allows the user to zoom in -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Non-svelte (plain yatl)</title>
+        <!-- http://dev.w3.org/html5/markup/meta.name.html -->
+        <!-- Speaking of Google, don't forget to set your site up:
+             http://google.com/webmasters -->
+        <meta name="google-site-verification" content="">
+        <!-- include stylesheets -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/journal/bootstrap.min.css">
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <!-- Favicons -->
+    [[block head]][[end]]
+
+        <title>Svelte app</title>
+
+        <link rel='icon' type='image/png' href='[[=URL('static', 'images/favicon.png')]]'>
+        <!--link rel='stylesheet' href='[[=URL('static', 'svelte.css')]]'-->
+
+    </head>
+
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">py4web</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="[[=URL('index')]]">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="[[=URL('page2')]]">Features</a>
+        </li>
+
+                  <li class="nav-item">
+          <a class="nav-link" href="[[=URL('non_svelte')]]">Non-svelte</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+        <!-- Masthead ===================================== -->
+    [[block header]]
+    [[end]]
+        <!-- Main ========================================= -->
+        <!-- Begin page content -->
+        <div class="container-fluid main-container">
+            [[=variable]]
+
+            [[block footer]] <!-- this is default footer -->
+        <footer class="footer container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    [[import datetime]]
+                    <div class="copyright pull-left">Copyright &#169; [[=datetime.datetime.utcnow().year]]</div>
+                    <div id="poweredBy" class="pull-right">
+                    Powered By
+                        <a href="https://py4web.com/">py4web</a> &
+                        <a href="https://trialandsuccess.nl/">Trial and Success</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    [[end]]
+        </div>
+        <!-- The javascript =============================== -->
+    [[block page_js]][[end page_js]]
+    </body>
+</html>
